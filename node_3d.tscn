@@ -41,9 +41,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46039, 5.41333, -0.408514)
 speed = 7
 jumpHeight = 10
 FallAcceleration = 15
-
-[node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46039, 5.41333, -0.408514)
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591315, -2.36277, 5.97239)

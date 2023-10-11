@@ -11,11 +11,13 @@ public partial class PlayerMovement : CharacterBody3D
     public int FallAcceleration { get; set; } = 75;
 
     private Vector3 _targetVelocity = Vector3.Zero;
+    Camera3D cam;
 
     public override void _Ready()
     {
         // Called every time the node is added to the scene.
         // Initialization here.
+        cam = GetNode<Camera3D>("Camera3D");
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -72,15 +74,14 @@ public partial class PlayerMovement : CharacterBody3D
     {
 
     }
-    public override void _Input(InputEvent @event)
+    public override void _Input(InputEvent motionUnknown)
     {
-        if (@event is InputEventKey keyEvent && keyEvent.Pressed)
+        InputEventMouseMotion motion = motionUnknown as InputEventMouseMotion;
+        if (motion != null)
         {
-            if (keyEvent.Keycode == Key.A)
-            {
-                GD.Print("A was pressed");
-
-            }
+            GD.Print(motion.Relative.X);
+            Rotate(Vector3.Up, -(motion.Relative.X / 100));
+            //Rotate(Vector3.Left, -(motion.Relative.Y / 100));
         }
     }
 }
