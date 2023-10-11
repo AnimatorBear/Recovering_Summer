@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmx10sqv1gxm8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gel3h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_80le0"]
+
+[node name="Player" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.976209, 1.88181, 0.58546)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016754, -0.00900054, -0.00497615)
+shape = SubResource("BoxShape3D_gel3h")
+
+[node name="Box-Top" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_80le0")
+skeleton = NodePath("../../..")
+
+[node name="Camera3D" type="Camera3D" parent="CollisionShape3D/Box-Top"]

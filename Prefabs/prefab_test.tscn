@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://xfjq2xc8at5y"]
+
+[ext_resource type="Script" path="res://Scripts/Print.cs" id="1_sev7e"]
+[ext_resource type="Material" uid="uid://301nwe5a0h8j" path="res://TestMat.tres" id="2_la2qd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gel3h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_80le0"]
+
+[node name="Prefab Test" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243583, 0.879022, -0.0981758)
+script = ExtResource("1_sev7e")
+print = "Hello Worm"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.383, 0, 0, 0, 1, 0, 0, 0, 4.383, 0, 0, 0)
+shape = SubResource("BoxShape3D_gel3h")
+
+[node name="NewBoxMesh" type="MeshInstance3D" parent="CollisionShape3D"]
+material_override = ExtResource("2_la2qd")
+mesh = SubResource("BoxMesh_80le0")
+skeleton = NodePath("../../..")

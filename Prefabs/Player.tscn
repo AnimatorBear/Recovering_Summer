@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://vrgcjjrclfb6"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_ow6r0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jtk5h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f0y24"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pad1i"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.976209, 1.24257, 0.58546)
+script = ExtResource("1_ow6r0")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" type="Node3D" parent="Pivot"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_jtk5h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_f0y24")
+
+[node name="Camera3D" type="Camera3D" parent="CollisionShape3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.723217, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D/Camera3D"]
+transform = Transform3D(0.174344, 0, 0, 0, 0.161391, 0, 0, 0, 0.824151, -0.380194, -0.254404, -0.476641)
+mesh = SubResource("BoxMesh_pad1i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D/Camera3D"]
+transform = Transform3D(0.174344, 0, 0, 0, 0.161391, 0, 0, 0, 0.824151, 0.382994, -0.254404, -0.476641)
+mesh = SubResource("BoxMesh_pad1i")
