@@ -50,9 +50,21 @@ public partial class PlayerMovement : CharacterBody3D
         if (direction != Vector3.Zero)
         {
             direction = direction.Normalized();
-            GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
+            GetNode<Node3D>("Pivot").LookAt(Vector3.Forward + direction, Vector3.Up);
         }
-        _targetVelocity.X = direction.X * speed;
+        if(Rotation.Y < 1.5f && Rotation.Y > 0)
+        {
+            GD.Print("Woah1");
+        }
+        else if(Rotation.Y < 3 && Rotation.Y > 1.5f)
+        {
+            GD.Print("Woah2");
+        }
+        else if (Rotation.Y < 0 && Rotation.Y > -3)
+        {
+            GD.Print("Woah4");
+        }
+            _targetVelocity.X = direction.X * speed;
         _targetVelocity.Z = direction.Z * speed;
 
         // Vertical velocity
@@ -79,7 +91,6 @@ public partial class PlayerMovement : CharacterBody3D
         InputEventMouseMotion motion = motionUnknown as InputEventMouseMotion;
         if (motion != null)
         {
-            GD.Print(motion.Relative.X);
             Rotate(Vector3.Up, -(motion.Relative.X / 100));
             //Rotate(Vector3.Left, -(motion.Relative.Y / 100));
         }

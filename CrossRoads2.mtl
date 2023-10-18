@@ -1,0 +1,1737 @@
+# Blender 3.3.0 MTL File: 'untitled.blend'
+# www.blender.org
+
+newmtl Ball2Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.039216 0.039216 0.039216
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Block11Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.024751 0.024751 0.024751
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl Block24Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.018238 0.018238 0.018238
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl Block82Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.004933 0.004933 0.004933
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl Block83Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.008187 0.008187 0.008187
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl Block8Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.059779 0.059779 0.059779
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl Block9Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.034662 0.034662 0.034662
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl Blocker1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.002586 0.002586 0.002586
+Ks 0.001024 0.001024 0.001024
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Blockingpiece1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.005483 0.005483 0.005483
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Blueprintb1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.011126 0.086901 0.493616
+Ks 0.078112 0.078112 0.078112
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Blueprintb2Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.396078 0.396078 0.396078
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 9
+map_Kd Blueprintc2_diff.png
+map_d Blueprintc2_diff.png
+
+newmtl Blueprintc1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.001433 0.141980 0.420508
+Ks 0.011794 0.011794 0.011794
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Blueprintc2Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.062745 0.062745 0.062745
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 9
+map_Kd Blueprintc2_diff.png
+map_d Blueprintc2_diff.png
+
+newmtl Bottle1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.216047 0.216047 0.216047
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 9
+map_Kd Bottle1_diff.png
+map_Ns Bottle1_spec.png
+map_d Bottle1_diff.png
+map_Bump Bottle1_nmap.png
+
+newmtl Bowlpiece1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.940601 0.940601 0.940601
+Ks 0.059018 0.059018 0.059018
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.545098
+illum 9
+
+newmtl Bpart10Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.007155 0.018913 0.031551
+Ks 0.001205 0.001205 0.001205
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Bulb1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.100704 0.100704 0.100704
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 9
+map_Kd Ring1_diff.png
+map_d Ring1_diff.png
+map_Bump Ring1_nmap.png
+
+newmtl Bulb6Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 0.612066
+Ks 0.054631 0.054631 0.054631
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Center1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.009166 0.009166 0.009166
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl Cone1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.891262 0.899384 0.899384
+Ks 0.056262 0.056262 0.056262
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl CremeFlower1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.062745 0.062745 0.062745
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd CremeFlower1_diff.png
+map_d CremeFlower1_diff.png
+
+newmtl Door8Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.058187 0.052842 0.056374
+Ks 0.022102 0.022102 0.022102
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Flame1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.012804 0.012804 0.012804
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Fluid1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.009999 0.009999 0.009999
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Fluid1_diff.png
+map_Ns Fluid1_spec.png
+map_d Fluid1_diff.png
+map_Bump Fluid1_nmap.png
+
+newmtl FoldingChair1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.252856 0.252856 0.252856
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Fumo1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.090196 0.090196 0.090196
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Fumo1_diff.png
+map_d Fumo1_diff.png
+
+newmtl Fumo2Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.090196 0.090196 0.090196
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Fumo2_diff.png
+map_d Fumo2_diff.png
+
+newmtl Golden1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.062745 0.062745 0.062745
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Golden1_diff.png
+map_d Golden1_diff.png
+
+newmtl Label1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.151058 0.096266 0.067725
+Ks 0.006589 0.006589 0.006589
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Light1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.982826 0.827726 0.271577
+Ks 0.062600 0.062600 0.062600
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.501961
+illum 9
+
+newmtl Light23Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.000000 0.000000
+Ks 0.030065 0.030065 0.030065
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.701961
+illum 9
+
+newmtl Light6Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.991393 0.899384 0.505432
+Ks 0.072043 0.072043 0.072043
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.501961
+illum 9
+
+newmtl Locker1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.103634 0.108711 0.141980
+Ks 0.046780 0.046780 0.046780
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Lockerdoora1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.124741 0.113921 0.121986
+Ks 0.047615 0.047615 0.047615
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Mat1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.027451 0.027451 0.027451
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Mat1_diff.png
+map_d Mat1_diff.png
+
+newmtl Meshesfxvtsb8zholnuhpy01wscx7f91Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.062745 0.062745 0.062745
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Meshesfxvtsb8zholnuhpy01wscx7f91_diff.png
+map_d Meshesfxvtsb8zholnuhpy01wscx7f91_diff.png
+
+newmtl Meshesm4a11Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.062745 0.062745 0.062745
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Meshesm4a11_diff.png
+map_d Meshesm4a11_diff.png
+
+newmtl Meshpart22Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.002387 0.002387 0.002387
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Snow1_diff.png
+map_Ns Snow1_spec.png
+map_d Snow1_diff.png
+map_Bump Snow1_nmap.png
+
+newmtl Meshpart32Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.353741 0.363604 0.420508
+Ks 0.150226 0.150226 0.150226
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Meshpart35Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.101145 0.069727 0.051122
+Ks 0.029309 0.029309 0.029309
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Meshpart37Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.180144 0.000000 0.000000
+Ks 0.005416 0.005416 0.005416
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Meshpart40Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.080219 0.073828 0.078057
+Ks 0.030644 0.030644 0.030644
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Meshpart42Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.180144 0.000000 0.000000
+Ks 0.023784 0.023784 0.023784
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Meshpart5Mtl.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.291503 0.291503 0.291503
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Meshpart5_diff.png
+map_Ns Meshpart5_spec.png
+map_d Meshpart5_diff.png
+map_Bump Meshpart5_nmap.png
+
+newmtl Part1130Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.082414 0.204710 0.431340
+Ks 0.015027 0.015027 0.015027
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Part1135Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.007155 0.018913 0.031551
+Ks 0.001205 0.001205 0.001205
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.501961
+illum 9
+
+newmtl Part1243Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.048366 0.048366 0.048366
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Fluid1_diff.png
+map_Ns Fluid1_spec.png
+map_d Fluid1_diff.png
+map_Bump Fluid1_nmap.png
+
+newmtl Part1274Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.011715 0.011715 0.011715
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Part128Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.080144 0.080144 0.080144
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Part12Mtl
+Ka 1.000000 1.000000 1.000000
+Kd 0.124741 0.113921 0.121986
+Ks 0.023572 0.023572 0.023572
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns Part1_spec.png
+map_Bump Part1_nmap.png
+
+newmtl Part1359Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.351965 0.351965 0.351965
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Part1437Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.070170 0.070170 0.070170
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Part192Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.078739 0.078739 0.078739
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Part1Mtl
+Ka 1.000000 1.000000 1.000000
+Kd 0.373615 0.368591 0.383775
+Ks 0.073594 0.073594 0.073594
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns Part1_spec.png
+map_Bump Part1_nmap.png
+
+newmtl Part232Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.033967 0.033967 0.033967
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl Part244Mtl
+Ka 1.000000 1.000000 1.000000
+Kd 0.007155 0.018913 0.031551
+Ks 0.003766 0.003766 0.003766
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns Part1_spec.png
+map_Bump Part1_nmap.png
+
+newmtl Part249Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.687031 0.566810 0.329729
+Ks 0.209073 0.209073 0.209073
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Part250Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.396078 0.396078 0.396078
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part250_diff.png
+map_d Part250_diff.png
+
+newmtl Part321Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.005135 0.005135 0.005135
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl Part38Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.250218 0.250218 0.250218
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Part3Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.373615 0.368591 0.383775
+Ks 0.023550 0.023550 0.023550
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Part42Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.940601 0.940601 0.940601
+Ks 0.084839 0.084839 0.084839
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Part715Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.010980 0.010980 0.010980
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Part716Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.000829 0.000829 0.000829
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Part80Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.560499 0.016988 0.007751
+Ks 0.017595 0.017595 0.017595
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Part82Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.003300 0.003300 0.003300
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part82_diff.png
+map_Ns Part82_spec.png
+map_d Part82_diff.png
+map_Bump Part82_nmap.png
+
+newmtl Part887Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.132026 0.132026 0.132026
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part887_diff.png
+map_d Part887_diff.png
+
+newmtl Part947Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.373615 0.368591 0.383775
+Ks 0.148659 0.148659 0.148659
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Part952Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.215764 0.275833 0.127530
+Ks 0.081741 0.081741 0.081741
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Part9Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.373615 0.368591 0.383775
+Ks 0.033853 0.033853 0.033853
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Pillar1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.042403 0.042403 0.042403
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Replacementwall1_diff.png
+map_Ns Replacementwall1_spec.png
+map_d Replacementwall1_diff.png
+map_Bump Replacementwall1_nmap.png
+
+newmtl Replacementwall1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.006674 0.006674 0.006674
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Replacementwall1_diff.png
+map_Ns Replacementwall1_spec.png
+map_d Replacementwall1_diff.png
+map_Bump Replacementwall1_nmap.png
+
+newmtl RightPath120Mtl
+Ka 1.000000 1.000000 1.000000
+Kd 0.353741 0.363604 0.420508
+Ks 0.074369 0.074369 0.074369
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ns Part1_spec.png
+map_Bump Part1_nmap.png
+
+newmtl RightPath14Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.016361 0.016361 0.016361
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl RightPath168Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.118108 0.118108 0.118108
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 9
+map_Kd Bottle1_diff.png
+map_Ns Bottle1_spec.png
+map_d Bottle1_diff.png
+map_Bump Bottle1_nmap.png
+
+newmtl RightPath212Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl RightPath5Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.005095 0.005095 0.005095
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl RightPath71Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.379284 0.379284 0.379284
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 9
+map_Kd Bottle1_diff.png
+map_Ns Bottle1_spec.png
+map_d Bottle1_diff.png
+map_Bump Bottle1_nmap.png
+
+newmtl Ring1Mtl
+Ns 255.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.078739 0.078739 0.078739
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Ring1_diff.png
+map_d Ring1_diff.png
+map_Bump Ring1_nmap.png
+
+newmtl Screen4Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.396078 0.396078 0.396078
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Screen4_diff.png
+map_d Screen4_diff.png
+
+newmtl Seat1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.190463 0.284452 0.227137
+Ks 0.014683 0.014683 0.014683
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl SmoothBlockModel1053Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.125316 0.125316 0.125316
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel1054Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.006506 0.006506 0.006506
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel1134Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.137633 0.137633 0.137633
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel1144Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.008749 0.008749 0.008749
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel636_diff.png
+map_Ns SmoothBlockModel636_spec.png
+map_d SmoothBlockModel636_diff.png
+map_Bump SmoothBlockModel636_nmap.png
+
+newmtl SmoothBlockModel1169Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.170599 0.170599 0.170599
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Meshpart5_diff.png
+map_Ns Meshpart5_spec.png
+map_d Meshpart5_diff.png
+map_Bump Meshpart5_nmap.png
+
+newmtl SmoothBlockModel1239Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.051713 0.051713 0.051713
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel1283Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.028537 0.028537 0.028537
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel1551Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.026361 0.026361 0.026361
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl SmoothBlockModel1671Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.320093 0.320093 0.320093
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel1679Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.462696 0.462696 0.462696
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel1771Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.008415 0.008415 0.008415
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl SmoothBlockModel1773Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.421969 0.421969 0.421969
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.016191 0.016191 0.016191
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl SmoothBlockModel2089Mtl
+Ns 255.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.666667 0.666667 0.666667
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel2089_diff.png
+map_d SmoothBlockModel2089_diff.png
+
+newmtl SmoothBlockModel2090Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.047161 0.047161 0.047161
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel2096Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.026855 0.026855 0.026855
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel2097Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.464741 0.652370 0.781751
+Ks 0.039715 0.039715 0.039715
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl SmoothBlockModel2120Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.035775 0.035775 0.035775
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel2125Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.157281 0.325037 0.598942
+Ks 0.022615 0.022615 0.022615
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl SmoothBlockModel2136Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.066811 0.066811 0.066811
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel2140Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.015383 0.015383 0.015383
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel2141Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.007272 0.007272 0.007272
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel2142Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.011207 0.011207 0.011207
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel2143Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.023747 0.023747 0.023747
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel525Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.004632 0.004632 0.004632
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Snow1_diff.png
+map_Ns Snow1_spec.png
+map_d Snow1_diff.png
+map_Bump Snow1_nmap.png
+
+newmtl SmoothBlockModel533Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.014006 0.014006 0.014006
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel540Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.038740 0.038740 0.038740
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel5Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.940601 0.940601 0.940601
+Ks 0.372552 0.372552 0.372552
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl SmoothBlockModel623Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.011203 0.011203 0.011203
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel624Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.007874 0.007874 0.007874
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel629Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.004594 0.004594 0.004594
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel630Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.597785 0.597785 0.597785
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel634Mtl
+Ns 255.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.666667 0.666667 0.666667
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel634_diff.png
+map_d SmoothBlockModel634_diff.png
+
+newmtl SmoothBlockModel636Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.004129 0.004129 0.004129
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel636_diff.png
+map_Ns SmoothBlockModel636_spec.png
+map_d SmoothBlockModel636_diff.png
+map_Bump SmoothBlockModel636_nmap.png
+
+newmtl SmoothBlockModel637Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.035190 0.035190 0.035190
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel639Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.008014 0.008014 0.008014
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel640Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.008201 0.008201 0.008201
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel643Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.025022 0.025022 0.025022
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel646Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.022146 0.022146 0.022146
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel667Mtl
+Ns 255.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.666667 0.666667 0.666667
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel667_diff.png
+map_d SmoothBlockModel667_diff.png
+
+newmtl SmoothBlockModel674Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.002679 0.002679 0.002679
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel636_diff.png
+map_Ns SmoothBlockModel636_spec.png
+map_d SmoothBlockModel636_diff.png
+map_Bump SmoothBlockModel636_nmap.png
+
+newmtl SmoothBlockModel685Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.015280 0.015280 0.015280
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl SmoothBlockModel725Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.010095 0.010095 0.010095
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl SmoothBlockModel793Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.009226 0.009226 0.009226
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl SmoothBlockModel810Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.005766 0.005766 0.005766
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl SmoothBlockModel819Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.240280 0.240280 0.240280
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel820Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.346624 0.346624 0.346624
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel856Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.005186 0.005186 0.005186
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl SmoothBlockModel861Mtl
+Ns 255.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.666667 0.666667 0.666667
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel861_diff.png
+map_d SmoothBlockModel861_diff.png
+
+newmtl SmoothBlockModel865Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.012521 0.012521 0.012521
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part321_diff.png
+map_Ns Part321_spec.png
+map_d Part321_diff.png
+map_Bump Part321_nmap.png
+
+newmtl SmoothBlockModel866Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.000881 0.000881 0.000881
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel636_diff.png
+map_Ns SmoothBlockModel636_spec.png
+map_d SmoothBlockModel636_diff.png
+map_Bump SmoothBlockModel636_nmap.png
+
+newmtl SmoothBlockModel899Mtl
+Ns 255.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.666667 0.666667 0.666667
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel899_diff.png
+map_d SmoothBlockModel899_diff.png
+
+newmtl SmoothBlockModel904Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.012583 0.012583 0.012583
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl SmoothBlockModel922Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.255328 0.255328 0.255328
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel927Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.221458 0.221458 0.221458
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel988Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.212469 0.212469 0.212469
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl SmoothBlockModel999Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.264769 0.264769 0.264769
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Snow1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.032059 0.032059 0.032059
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Snow1_diff.png
+map_Ns Snow1_spec.png
+map_d Snow1_diff.png
+map_Bump Snow1_nmap.png
+
+newmtl Stand1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.103634 0.108711 0.141980
+Ks 0.007411 0.007411 0.007411
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Thing1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.015966 0.015966 0.015966
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl Topsnowcover1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.029102 0.029102 0.029102
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Snow1_diff.png
+map_Ns Snow1_spec.png
+map_d Snow1_diff.png
+map_Bump Snow1_nmap.png
+
+newmtl TorchScone1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.007155 0.018913 0.031551
+Ks 0.007607 0.007607 0.007607
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Union109Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.036044 0.036044 0.036044
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Union110Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.022429 0.022429 0.022429
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Union125Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.026601 0.026601 0.026601
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Union126Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.017855 0.017855 0.017855
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd SmoothBlockModel1_diff.png
+map_Ns SmoothBlockModel1_spec.png
+map_d SmoothBlockModel1_diff.png
+map_Bump SmoothBlockModel1_nmap.png
+
+newmtl Union128Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.030269 0.030269 0.030269
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Snow1_diff.png
+map_Ns Snow1_spec.png
+map_d Snow1_diff.png
+map_Bump Snow1_nmap.png
+
+newmtl Union140Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.412457 0.412457 0.412457
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Union1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.018847 0.018847 0.018847
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl Union39Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.940601 0.940601 0.940601
+Ks 0.084839 0.084839 0.084839
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.400000
+illum 9
+
+newmtl Union3Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.023550 0.023550 0.023550
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union3_diff.png
+map_Ns Union3_spec.png
+map_d Union3_diff.png
+map_Bump Union3_nmap.png
+
+newmtl Union72Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.034928 0.034928 0.034928
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Union76Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.373615 0.067725 0.067725
+Ks 0.067210 0.067210 0.067210
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Union79Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.028980 0.028980 0.028980
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl Union80Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.006754 0.006754 0.006754
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
+
+newmtl Wallremove1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.001280 0.001280 0.001280
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Thing1_diff.png
+map_Ns Thing1_spec.png
+map_d Thing1_diff.png
+map_Bump Thing1_nmap.png
+
+newmtl Wedge121Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.560499 0.016988 0.007751
+Ks 0.077267 0.077267 0.077267
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.701961
+illum 9
+
+newmtl Wedge1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.124741 0.113921 0.121986
+Ks 0.007543 0.007543 0.007543
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Wedge34Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.084743 0.084743 0.084743
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Part38_diff.png
+map_Ns Part38_spec.png
+map_d Part38_diff.png
+map_Bump Part38_nmap.png
+
+newmtl Wedge87Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.396078 0.396078 0.396078
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Wedge87_diff.png
+map_d Wedge87_diff.png
+
+newmtl Wedge96Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.396078 0.396078 0.396078
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Wedge96_diff.png
+map_d Wedge96_diff.png
+
+newmtl Woodpanels1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.003784 0.003784 0.003784
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Union1_diff.png
+map_Ns Union1_spec.png
+map_d Union1_diff.png
+map_Bump Union1_nmap.png
