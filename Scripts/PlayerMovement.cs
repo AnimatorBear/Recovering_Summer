@@ -15,6 +15,9 @@ public partial class PlayerMovement : CharacterBody3D
 
     [Export]
     public float cameraLimit { get; set; } = 1.2f;
+    [Export]
+    public float jumpCooldown { get; set; } = 1f;
+    float currentJumpCooldown = 1f;
 
     private Vector3 _targetVelocity = Vector3.Zero;
     Camera3D cam;
@@ -27,6 +30,7 @@ public partial class PlayerMovement : CharacterBody3D
     }
     public override void _PhysicsProcess(double delta)
     {
+        currentJumpCooldown -= (float)delta;
         // We create a local variable to store the input direction.
         var direction = Vector3.Zero;
 
@@ -55,9 +59,10 @@ public partial class PlayerMovement : CharacterBody3D
             direction = direction.Normalized();
         }
 
-        if (Input.IsActionPressed("jump"))
+        if (Input.IsActionPressed("jump") && currentJumpCooldown < 0)
         {
             direction.Y += 1.0f;
+            currentJumpCooldown = jumpCooldown;
         }
         //Translate();
         _targetVelocity.X = direction.X * speed;
@@ -72,9 +77,6 @@ public partial class PlayerMovement : CharacterBody3D
         {
             _targetVelocity.Y = direction.Y * jumpHeight;
         }
-        GD.Print(direction.Y + " Y");
-        GD.Print(direction.X + " X");
-        GD.Print(direction.Z + " Z");
 
         // Moving the character
         Velocity = _targetVelocity.Rotated(Vector3.Up.Normalized(), Rotation.Y);
