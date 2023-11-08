@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_ow6r0"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_f0y24"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_pad1i"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtk5h"]
 size = Vector3(1, 0.816388, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3pc1c"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f0y24"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pad1i"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.622309, 0, 0, 0, 0.622309, 0, 0, 0, 0.622309, -0.976209, 1.24257, 0.58546)
@@ -17,7 +17,19 @@ floor_stop_on_slope = false
 floor_snap_length = 0.4
 script = ExtResource("1_ow6r0")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_jtk5h")
+
+[node name="Rotate" type="Node3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0496318, -0.601863, -0.0171111)
+shape = SubResource("SphereShape3D_3pc1c")
+
 [node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Character" type="Node3D" parent="Pivot"]
 
@@ -36,14 +48,3 @@ mesh = SubResource("BoxMesh_pad1i")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Pivot/MeshInstance3D/Camera3D"]
 transform = Transform3D(0.108496, 0, 0, 0, 0.100435, 0, 0, 0, 0.512876, 0.23834, -0.158318, -0.296618)
 mesh = SubResource("BoxMesh_pad1i")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_jtk5h")
-
-[node name="Rotate" type="Node3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0496318, -0.601863, -0.0171112)
-shape = SubResource("SphereShape3D_3pc1c")

@@ -13,6 +13,9 @@ public partial class PlayerMovement : CharacterBody3D
     [Export]
     public int camSensitivity { get; set; } = 1;
 
+    [Export]
+    public float cameraLimit { get; set; } = 1.2f;
+
     private Vector3 _targetVelocity = Vector3.Zero;
     Camera3D cam;
 
@@ -45,14 +48,16 @@ public partial class PlayerMovement : CharacterBody3D
         if (Input.IsActionPressed("move_forward"))
         {
             direction.Z -= 1.0f;
-        }
-        if (Input.IsActionPressed("jump"))
-        {
-            direction.Y += 1.0f;
+
         }
         if (direction != Vector3.Zero)
         {
             direction = direction.Normalized();
+        }
+
+        if (Input.IsActionPressed("jump"))
+        {
+            direction.Y += 1.0f;
         }
         //Translate();
         _targetVelocity.X = direction.X * speed;
@@ -67,6 +72,9 @@ public partial class PlayerMovement : CharacterBody3D
         {
             _targetVelocity.Y = direction.Y * jumpHeight;
         }
+        GD.Print(direction.Y + " Y");
+        GD.Print(direction.X + " X");
+        GD.Print(direction.Z + " Z");
 
         // Moving the character
         Velocity = _targetVelocity.Rotated(Vector3.Up.Normalized(), Rotation.Y);
@@ -80,10 +88,26 @@ public partial class PlayerMovement : CharacterBody3D
     public override void _Input(InputEvent motionUnknown)
     {
         InputEventMouseMotion motion = motionUnknown as InputEventMouseMotion;
+        Node3D pivot = GetNode<Node3D>("Pivot");
         if (motion != null)
         {
             Rotate(Vector3.Up, -((motion.Relative.X / 100)));
-            GetNode<Node3D>("Pivot").Rotate(Vector3.Right, -((motion.Relative.Y / 100)));
+            if(pivot.Rotation.X > -1.2f && pivot.Rotation.X < 1.2f)
+            {
+                pivot.Rotate(Vector3.Right, -((motion.Relative.Y / 100)));
+            }
+            else
+            {
+                if(pivot.Rotation.X <= -1.2f)
+                {
+                    
+                    pivot.Rotate(Vector3.Right, 0.01f);
+                }
+                else
+                {
+                    pivot.Rotate(Vector3.Right, -0.01f);
+                }
+            }
         }
     }
 }
