@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://vrgcjjrclfb6"]
+[gd_scene load_steps=9 format=3 uid="uid://vrgcjjrclfb6"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_ow6r0"]
 [ext_resource type="Script" path="res://Scripts/HealthScript.cs" id="2_wjldh"]
 [ext_resource type="Script" path="res://Scripts/PlayerControls.cs" id="3_waayb"]
+[ext_resource type="PackedScene" uid="uid://bbp41dgghlwam" path="res://Meshes/Decimator.glb" id="4_gcwiu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtk5h"]
 size = Vector3(1, 0.816388, 1)
@@ -68,6 +69,10 @@ mesh = SubResource("BoxMesh_pad1i")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Pivot/MeshInstance3D/Camera3D"]
 transform = Transform3D(0.108496, 0, 0, 0, 0.100435, 0, 0, 0, 0.512876, 0.23834, -0.158318, -0.296618)
 mesh = SubResource("BoxMesh_pad1i")
+
+[node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D" instance=ExtResource("4_gcwiu")]
+transform = Transform3D(0.0476864, -0.194232, 0, 0.194232, 0.0476864, 0, 0, 0, 0.2, -0.0451657, -0.114875, -0.517164)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
