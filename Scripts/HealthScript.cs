@@ -20,6 +20,7 @@ public partial class HealthScript : Area3D
 		if(health < 1)
 		{
             GD.Print($"Death. of {GetParent().Name}");
+			GetParent().QueueFree();
         }
 		GD.Print(health);
 	}
@@ -28,10 +29,22 @@ public partial class HealthScript : Area3D
     {
         if(body.Name != GetParent().Name)
 		{
-			if (body.GetMeta("Attacking").AsBool() == true&& body.GetMeta("Blocking").AsBool() == false)
+            if (GetParent().GetMeta("Attacking").AsBool() == true&& body.GetMeta("Blocking").AsBool() == false)
 			{
 				HealthScript healthScript = body.GetNode<Area3D>("MobDetector") as HealthScript;
 				healthScript.TakeDamage(GetParent().GetMeta("Damage").AsInt32());
+            }
+			if (body.GetMeta("Blocking").AsBool() == true && GetParent().GetMeta("Attacking").AsBool() == true)
+			{
+                GD.Print("Parried L");
+                PlayerMovement move = GetParent() as PlayerMovement;
+				move.stunTime = 5f;
+			}
+			if(body.GetMeta("Shoving").AsBool() == true)
+			{
+                GD.Print("Shoved");
+                PlayerMovement move = GetParent() as PlayerMovement;
+                move.stunTime = 5f;
             }
         }
     }

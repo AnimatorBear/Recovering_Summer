@@ -23,6 +23,7 @@ metadata/Attacking = false
 metadata/Pushing = false
 metadata/Blocking = false
 metadata/Damage = 100.0
+metadata/Shoving = false
 
 [node name="MobDetector" type="Area3D" parent="."]
 monitorable = false
