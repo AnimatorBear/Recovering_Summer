@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://vrgcjjrclfb6"]
+[gd_scene load_steps=7 format=3 uid="uid://vrgcjjrclfb6"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_ow6r0"]
+[ext_resource type="Script" path="res://Scripts/HealthScript.cs" id="2_wjldh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtk5h"]
 size = Vector3(1, 0.816388, 1)
@@ -14,15 +15,22 @@ size = Vector3(1, 0.816388, 1)
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.622309, 0, 0, 0, 0.622309, 0, 0, 0, 0.622309, -0.976209, 1.24257, 0.58546)
 floor_stop_on_slope = false
-floor_snap_length = 0.4
+floor_block_on_wall = false
+floor_max_angle = 1.309
+floor_snap_length = 0.5
 script = ExtResource("1_ow6r0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
+[node name="MobDetector" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+monitorable = false
+script = ExtResource("2_wjldh")
+health = 100.0
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MobDetector"]
+transform = Transform3D(1.86921, 0, 0, 0, 1.85561, 0, 0, 0, 1.72651, 0, 0, -0.115635)
 shape = SubResource("BoxShape3D_jtk5h")
 
-[node name="Rotate" type="Node3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
+[node name="Node" type="Node" parent="."]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0496318, -0.601863, -0.0171111)
@@ -48,3 +56,12 @@ mesh = SubResource("BoxMesh_pad1i")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Pivot/MeshInstance3D/Camera3D"]
 transform = Transform3D(0.108496, 0, 0, 0, 0.100435, 0, 0, 0, 0.512876, 0.23834, -0.158318, -0.296618)
 mesh = SubResource("BoxMesh_pad1i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_jtk5h")
+
+[node name="Rotate" type="Node3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
+
+[connection signal="body_entered" from="MobDetector" to="MobDetector" method="OnArea3DBodyEntered"]
