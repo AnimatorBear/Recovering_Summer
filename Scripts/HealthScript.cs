@@ -22,7 +22,6 @@ public partial class HealthScript : Area3D
             GD.Print($"Death. of {GetParent().Name}");
 			GetParent().QueueFree();
         }
-		GD.Print(health);
 	}
 
     private void OnArea3DBodyEntered(Node3D body)
@@ -40,12 +39,6 @@ public partial class HealthScript : Area3D
                 PlayerMovement move = GetParent() as PlayerMovement;
 				move.stunTime = 5f;
 			}
-			if(body.GetMeta("Shoving").AsBool() == true)
-			{
-                GD.Print("Shoved");
-                PlayerMovement move = GetParent() as PlayerMovement;
-                move.stunTime = 5f;
-            }
         }
     }
 }

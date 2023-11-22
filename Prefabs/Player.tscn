@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://vrgcjjrclfb6"]
+[gd_scene load_steps=8 format=3 uid="uid://vrgcjjrclfb6"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_ow6r0"]
 [ext_resource type="Script" path="res://Scripts/HealthScript.cs" id="2_wjldh"]
+[ext_resource type="Script" path="res://Scripts/PlayerControls.cs" id="3_waayb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtk5h"]
 size = Vector3(1, 0.816388, 1)
@@ -32,6 +33,14 @@ health = 100.0
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="MobDetector"]
 transform = Transform3D(1.86921, 0, 0, 0, 1.67808, 0, 0, 0, 0.684825, 0, 0.0863504, -1.14253)
+shape = SubResource("BoxShape3D_jtk5h")
+
+[node name="HitDetector" type="Area3D" parent="."]
+monitorable = false
+script = ExtResource("3_waayb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="HitDetector"]
+transform = Transform3D(1.86921, 0, 0, 0, 1.67808, 0, 0, 0, 1.81409, 0, 0.086, 0)
 shape = SubResource("BoxShape3D_jtk5h")
 
 [node name="Node" type="Node" parent="."]
@@ -68,3 +77,4 @@ shape = SubResource("BoxShape3D_jtk5h")
 transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
 
 [connection signal="body_entered" from="MobDetector" to="MobDetector" method="OnArea3DBodyEntered"]
+[connection signal="body_entered" from="HitDetector" to="HitDetector" method="OnHitboxEntered"]
