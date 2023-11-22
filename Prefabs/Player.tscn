@@ -19,15 +19,18 @@ floor_block_on_wall = false
 floor_max_angle = 1.309
 floor_snap_length = 0.5
 script = ExtResource("1_ow6r0")
+metadata/Attacking = false
+metadata/Pushing = false
+metadata/Blocking = false
+metadata/Damage = 100.0
 
 [node name="MobDetector" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 monitorable = false
 script = ExtResource("2_wjldh")
 health = 100.0
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="MobDetector"]
-transform = Transform3D(1.86921, 0, 0, 0, 1.85561, 0, 0, 0, 1.72651, 0, 0, -0.115635)
+transform = Transform3D(1.86921, 0, 0, 0, 1.67808, 0, 0, 0, 0.684825, 0, 0.0863504, -1.14253)
 shape = SubResource("BoxShape3D_jtk5h")
 
 [node name="Node" type="Node" parent="."]
@@ -37,7 +40,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0496318, -0.601863, 
 shape = SubResource("SphereShape3D_3pc1c")
 
 [node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Character" type="Node3D" parent="Pivot"]
 

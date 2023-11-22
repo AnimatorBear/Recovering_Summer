@@ -5,13 +5,10 @@ public partial class HealthScript : Area3D
 	[Export] public float health;
     [Signal]
     public delegate void HitEventHandler();
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
 
     }
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 
@@ -20,9 +17,9 @@ public partial class HealthScript : Area3D
 	public void TakeDamage(float damage)
 	{
 		health -= damage;
-		if(health < 0)
+		if(health < 1)
 		{
-            GD.Print("Death.");
+            GD.Print($"Death. of {GetParent().Name}");
         }
 		GD.Print(health);
 	}
@@ -31,7 +28,11 @@ public partial class HealthScript : Area3D
     {
         if(body.Name != GetParent().Name)
 		{
-			GD.Print("Hit smthin");
-		}
+			if (body.GetMeta("Attacking").AsBool() == true&& body.GetMeta("Blocking").AsBool() == false)
+			{
+				HealthScript healthScript = body.GetNode<Area3D>("MobDetector") as HealthScript;
+				healthScript.TakeDamage(GetParent().GetMeta("Damage").AsInt32());
+            }
+        }
     }
 }
