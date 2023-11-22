@@ -3,6 +3,8 @@ using Godot;
 public partial class PlayerMovement : CharacterBody3D
 {
     [Export]
+    public bool isDummy{ get; set; } = true;
+    [Export]
     public bool canAttack { get; set; } = true;
     [Export]
     public int speed { get; set; } = 14;
@@ -31,12 +33,17 @@ public partial class PlayerMovement : CharacterBody3D
 
     [Export]
     public float shoveDuration { get; set; } = 14;
+    [Export]
+    public float shoveStun { get; set; } = 14;
+    [Export]
+    public float lightAttDuration { get; set; } = 1f;
+    [Export]
+    public float parryDuration { get; set; } = 14;
+    float parryTime = 0f;
 
 
     public override void _Ready()
     {
-        // Called every time the node is added to the scene.
-        // Initialization here.
         cam = GetNode<Camera3D>("Camera3D");
     }
     public override void _PhysicsProcess(double delta)
@@ -45,6 +52,7 @@ public partial class PlayerMovement : CharacterBody3D
         currentJumpCooldown -= (float)delta;
         stunTime -= (float)delta;
         shoveTime -= (float)delta;
+        parryTime -= (float)delta;
         if(stunTime < 0f)
         {
             // We create a local variable to store the input direction.
@@ -97,11 +105,11 @@ public partial class PlayerMovement : CharacterBody3D
             // Moving the character
             Velocity = _targetVelocity.Rotated(Vector3.Up.Normalized(), Rotation.Y);
             MoveAndSlide();
-            if (canAttack)
+            if (canAttack && !isDummy)
             {
                 if (Input.IsActionJustPressed("light_attack"))
                 {
-                    attackTime = 1f;
+                    attackTime = lightAttDuration;
                 }
                 if (Input.IsActionJustPressed("heavy_attack"))
                 {
@@ -113,7 +121,7 @@ public partial class PlayerMovement : CharacterBody3D
                 }
                 if (Input.IsActionJustPressed("parry"))
                 {
-
+                    parryTime = parryDuration;
                 }
             }
 
@@ -126,26 +134,47 @@ public partial class PlayerMovement : CharacterBody3D
             Velocity = _targetVelocity.Rotated(Vector3.Up.Normalized(), Rotation.Y);
             MoveAndSlide();
         }
-        if (attackTime > 0 && GetMeta("Attacking").AsBool() == false)
+        if (!isDummy)
         {
-            SetMeta("Attacking", true);
-            GD.Print("Attacking");
+            if (attackTime > 0 && GetMeta("Attacking").AsBool() == false)
+            {
+                SetMeta("Attacking", true);
+                GD.Print("Attacking");
+            }
+            else if (attackTime < 0 && GetMeta("Attacking").AsBool() == true)
+            {
+                SetMeta("Attacking", false);
+                GD.Print("Not Attacking");
+            }
+            if (shoveTime < shoveDuration && shoveTime >= shoveDuration - shoveStun)
+            {
+                SetMeta("Shoving", true);
+                canAttack = false;
+                GD.Print("Shoving");
+            }
+            else if (shoveTime < shoveDuration - shoveStun && shoveTime >= 0)
+            {
+                SetMeta("Shoving", false);
+                GD.Print("Shove Recover");
+            }
+            else if (shoveTime < 0)
+            {
+                SetMeta("Shoving", false);
+                canAttack = true;
+            }
+
+            if (parryTime > 0 && GetMeta("Blocking").AsBool() == false)
+            {
+                SetMeta("Blocking", true);
+                GD.Print("Parrying");
+            }
+            else if (parryTime < 0 && GetMeta("Blocking").AsBool() == true)
+            {
+                SetMeta("Blocking", false);
+                GD.Print("Not Parrying");
+            }
         }
-        else if (attackTime < 0 && GetMeta("Attacking").AsBool() == true)
-        {
-            SetMeta("Attacking", false);
-            GD.Print("Not Attacking");
-        }
-        if (shoveTime > 0 && GetMeta("Shoving").AsBool() == false)
-        {
-            SetMeta("Shoving", true);
-            GD.Print("Shoving");
-        }
-        else if (shoveTime < 0 && GetMeta("Shoving").AsBool() == true)
-        {
-            SetMeta("Shoving", false);
-            GD.Print("Not Shoving");
-        }
+        
     }
 
     public override void _Process(double delta)
@@ -154,7 +183,7 @@ public partial class PlayerMovement : CharacterBody3D
     }
     public override void _Input(InputEvent motionUnknown)
     {
-        if (canAttack)
+        if(!isDummy)
         {
             InputEventMouseMotion motion = motionUnknown as InputEventMouseMotion;
             Node3D pivot = GetNode<Node3D>("Pivot");
