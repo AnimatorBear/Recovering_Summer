@@ -5,8 +5,12 @@ public partial class ItemScript : Node
 {
 	[Export]
 	public bool isMelee { get; set; }
-	[Export]
+    [Export]
+    public float useTime { get; set; }
+    [Export]
 	public float extraDamage { get; set; }
+	[Export]
+	public int uses { get; set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

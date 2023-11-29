@@ -2,7 +2,9 @@ using Godot;
 
 public partial class HealthScript : Area3D
 {
+	[Export] public float maxHealth;
 	[Export] public float health;
+	public float extraDamage;
     [Signal]
     public delegate void HitEventHandler();
     public override void _Ready()
@@ -16,12 +18,17 @@ public partial class HealthScript : Area3D
 
 	public void TakeDamage(float damage)
 	{
-		health -= damage;
+		health -= (damage * (extraDamage + 1));
+		GD.Print(damage * (extraDamage + 1));
 		if(health < 1)
 		{
             GD.Print($"Death. of {GetParent().Name}");
 			GetParent().QueueFree();
-        }
+        }else if (health > maxHealth)
+		{
+			health = maxHealth;
+		}
+		GD.Print(health + " / " + maxHealth);
 	}
 
     private void OnArea3DBodyEntered(Node3D body)

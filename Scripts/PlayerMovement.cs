@@ -11,6 +11,10 @@ public partial class PlayerMovement : CharacterBody3D
     [Export]
     public int speed { get; set; } = 14;
 
+    float currentSpeed { get; set; }
+
+    float speedDebuff { get; set; }
+
     [Export]
     public int jumpHeight{ get; set; } = 14;
     [Export]
@@ -50,6 +54,14 @@ public partial class PlayerMovement : CharacterBody3D
     [Export]
     public bool hasBackpack { get; set; }
 
+    [Export]
+    public bool canVirus { get; set; }
+    int virusStage { get; set; } = 0;
+    [Export]
+    float[] timeTillNextStage { get; set; } = { 4.2f, 4, 4, 4,4 };
+    float stageTime;
+
+    float itemUseTime = 0;
 
     public override void _Ready()
     {
@@ -61,6 +73,9 @@ public partial class PlayerMovement : CharacterBody3D
         inventory[5] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory6").GetChild(0) as ItemScript;
         GD.Print(inventory[0].Name);
         SetMeta("Damage", baseDamage);
+        virusStage = 1;
+        stageTime = timeTillNextStage[virusStage - 1];
+        currentSpeed = speed;
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -70,6 +85,44 @@ public partial class PlayerMovement : CharacterBody3D
         stunTime -= (float)delta;
         shoveTime -= (float)delta;
         parryTime -= (float)delta;
+        if (canVirus)
+        {
+            //GD.Print(stageTime);
+            stageTime -= (float)delta;
+        }
+
+        if(stageTime < 0 && canVirus)
+        {
+            virusStage++;
+            if (virusStage < 5)
+            {
+                GD.Print(virusStage);
+                stageTime = timeTillNextStage[virusStage - 1];
+                switch (virusStage)
+                {
+                    case 2:
+                        speedDebuff += 0.1f;
+                        break;
+                    case 3:
+                        GetNode<HealthScript>("MobDetector").maxHealth -= 10;
+                        GetNode<HealthScript>("MobDetector").extraDamage  += 0.2f;
+                        GetNode<HealthScript>("MobDetector").TakeDamage(1);
+                        break;
+                    case 4:
+                        GetNode<HealthScript>("MobDetector").maxHealth -= 15;
+                        GetNode<HealthScript>("MobDetector").extraDamage += 0.15f;
+                        speedDebuff += 0.25f;
+                        GetNode<HealthScript>("MobDetector").TakeDamage(1);
+                        break;
+                }
+
+            }
+            else
+            {
+                GetNode<HealthScript>("MobDetector").TakeDamage(500);
+            }
+
+        }
         if(stunTime < 0f)
         {
             // We create a local variable to store the input direction.
@@ -106,8 +159,8 @@ public partial class PlayerMovement : CharacterBody3D
                 currentJumpCooldown = jumpCooldown;
             }
             //Translate();
-            _targetVelocity.X = direction.X * speed;
-            _targetVelocity.Z = direction.Z * speed;
+            _targetVelocity.X = direction.X * (currentSpeed * (1 -speedDebuff));
+            _targetVelocity.Z = direction.Z * (currentSpeed * (1 - speedDebuff));
 
             // Vertical velocity
             if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
@@ -124,9 +177,43 @@ public partial class PlayerMovement : CharacterBody3D
             MoveAndSlide();
             if (canAttack && !isDummy)
             {
-                if (Input.IsActionJustPressed("light_attack"))
+                if (Input.IsActionPressed("light_attack") && selectedItem != 0)
                 {
-                    attackTime = lightAttDuration;
+                    if (selectedItem == 1|| inventory[selectedItem - 1] == null)
+                    {
+                        attackTime = lightAttDuration;
+                        
+                    }
+                    else if (inventory[selectedItem - 1].Name == "Amoxicillin Tablets" && stageTime < timeTillNextStage[virusStage - 1])
+                    {
+                        itemUseTime += (float)delta;
+                        if(itemUseTime > inventory[selectedItem-1].useTime)
+                        {
+                            stageTime = timeTillNextStage[virusStage - 1];
+                            itemUseTime = 0;
+                            inventory[selectedItem - 1].uses -= 1;
+                            if (inventory[selectedItem-1].uses < 1)
+                            {
+                                inventory[selectedItem - 1].QueueFree();
+                                inventory[selectedItem - 1] = null;
+                            }
+                        }
+                    }
+                    else if (inventory[selectedItem - 1].Name == "Augmentin Antibiotics")
+                    {
+                        itemUseTime += (float)delta;
+                        if (itemUseTime > inventory[selectedItem - 1].useTime)
+                        {
+                            stageTime = timeTillNextStage[virusStage - 1] + 90;
+                            itemUseTime = 0;
+                            inventory[selectedItem - 1].uses -= 1;
+                            if (inventory[selectedItem - 1].uses < 1)
+                            {
+                                inventory[selectedItem - 1].QueueFree();
+                                inventory[selectedItem - 1] = null;
+                            }
+                        }
+                    }
                 }
                 if (Input.IsActionJustPressed("heavy_attack"))
                 {
@@ -153,7 +240,7 @@ public partial class PlayerMovement : CharacterBody3D
         }
         if (!isDummy)
         {
-            if (attackTime > 0 && GetMeta("Attacking").AsBool() == false)
+            if (GetMeta("Attacking").AsBool() == false && attackTime > 0)
             {
                 SetMeta("Attacking", true);
                 GD.Print("Attacking");

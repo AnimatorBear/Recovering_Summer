@@ -22,6 +22,7 @@ floor_block_on_wall = false
 floor_max_angle = 1.309
 floor_snap_length = 0.5
 script = ExtResource("1_ow6r0")
+timeTillNextStage = PackedFloat32Array(420, 400, 400, 400, 400)
 metadata/Attacking = false
 metadata/Pushing = false
 metadata/Blocking = false
@@ -31,6 +32,7 @@ metadata/Shoving = false
 [node name="MobDetector" type="Area3D" parent="."]
 monitorable = false
 script = ExtResource("2_wjldh")
+maxHealth = 100.0
 health = 100.0
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="MobDetector"]
@@ -72,6 +74,7 @@ transform = Transform3D(0.108496, 0, 0, 0, 0.100435, 0, 0, 0, 0.512876, 0.23834,
 mesh = SubResource("BoxMesh_pad1i")
 
 [node name="Inventory1" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
+visible = false
 
 [node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D/Inventory1" instance=ExtResource("4_gcwiu")]
 transform = Transform3D(0.0476864, -0.194232, 0, 0.194232, 0.0476864, 0, 0, 0, 0.2, -0.0451657, -0.114875, -0.517164)
@@ -81,18 +84,20 @@ extraDamage = 20.0
 [node name="Inventory2" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
 visible = false
 
-[node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D/Inventory2" instance=ExtResource("4_gcwiu")]
+[node name="Amoxicillin Tablets" parent="Pivot/MeshInstance3D/Camera3D/Inventory2" instance=ExtResource("4_gcwiu")]
 transform = Transform3D(0.105602, 0.169848, 0, -0.169848, 0.105602, 0, 0, 0, 0.2, -0.0451657, -0.114875, -0.517164)
 script = ExtResource("5_mk5n3")
-extraDamage = 20.0
+useTime = 5.0
+uses = 2
 
 [node name="Inventory3" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
 visible = false
 
-[node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D/Inventory3" instance=ExtResource("4_gcwiu")]
+[node name="Augmentin Antibiotics" parent="Pivot/MeshInstance3D/Camera3D/Inventory3" instance=ExtResource("4_gcwiu")]
 transform = Transform3D(-0.15957, 0.120572, 0, -0.120572, -0.15957, 0, 0, 0, 0.2, -0.0451657, -0.114875, -0.517164)
 script = ExtResource("5_mk5n3")
-extraDamage = 20.0
+useTime = 3.0
+uses = 1
 
 [node name="Inventory4" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
 visible = false
