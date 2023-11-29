@@ -3,6 +3,8 @@ using Godot;
 public partial class PlayerMovement : CharacterBody3D
 {
     [Export]
+    public int baseDamage {  get; set; }
+    [Export]
     public bool isDummy{ get; set; } = true;
     [Export]
     public bool canAttack { get; set; } = true;
@@ -40,14 +42,29 @@ public partial class PlayerMovement : CharacterBody3D
     [Export]
     public float parryDuration { get; set; } = 14;
     float parryTime = 0f;
+    [Export]
+    public ItemScript[] inventory { get; set; } = new ItemScript[6];
+
+    int selectedItem = 0;
+
+    [Export]
+    public bool hasBackpack { get; set; }
 
 
     public override void _Ready()
     {
-        cam = GetNode<Camera3D>("Camera3D");
+        //cam = GetNode<Camera3D>("Camera3D");
+        inventory[0] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory1").GetChild(0) as ItemScript;
+        inventory[1] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory2").GetChild(0) as ItemScript;
+        inventory[2] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory3").GetChild(0) as ItemScript;
+        inventory[4] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory5").GetChild(0) as ItemScript;
+        inventory[5] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory6").GetChild(0) as ItemScript;
+        GD.Print(inventory[0].Name);
+        SetMeta("Damage", baseDamage);
     }
     public override void _PhysicsProcess(double delta)
     {
+        #region Attacking, Movement
         attackTime -= (float)delta;
         currentJumpCooldown -= (float)delta;
         stunTime -= (float)delta;
@@ -174,7 +191,129 @@ public partial class PlayerMovement : CharacterBody3D
                 GD.Print("Not Parrying");
             }
         }
-        
+        #endregion
+        if (!isDummy)
+        {
+            if (Input.IsActionJustPressed("InventoryOne") && selectedItem != 1)
+            {
+                ItemScript item = inventory[0].Duplicate() as ItemScript;
+                GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory4").AddChild(item);
+                inventory[3] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory4").GetChild(0) as ItemScript;
+
+
+                SetMeta("Damage", baseDamage);
+                foreach (ItemScript it in inventory)
+                {
+                    if(it != null)
+                    {
+                        it.GetParent<Node3D>().Visible = false;
+                    }
+                }
+                if (inventory[0] != null)
+                {
+                    inventory[0].GetParent<Node3D>().Visible = true;
+                    float currentDamage = ((float)GetMeta("Damage"));
+                    SetMeta("Damage", currentDamage + inventory[0].extraDamage);
+                }
+                selectedItem = 1;
+            }
+            if (Input.IsActionJustPressed("InventoryTwo") && selectedItem != 2)
+            {
+                SetMeta("Damage", baseDamage);
+                foreach (ItemScript it in inventory)
+                {
+                    if (it != null)
+                    {
+                        it.GetParent<Node3D>().Visible = false;
+                    }
+                }
+                if (inventory[1] != null)
+                {
+                    inventory[1].GetParent<Node3D>().Visible = true;
+                    float currentDamage = ((float)GetMeta("Damage"));
+                    SetMeta("Damage", currentDamage + inventory[1].extraDamage);
+                }
+                selectedItem = 2;
+
+            }
+            if (Input.IsActionJustPressed("InventoryThree") && selectedItem != 3)
+            {
+                SetMeta("Damage", baseDamage);
+                foreach (ItemScript it in inventory)
+                {
+                    if (it != null)
+                    {
+                        it.GetParent<Node3D>().Visible = false;
+                    }
+                }
+                if (inventory[2] != null)
+                {
+                    inventory[2].GetParent<Node3D>().Visible = true;
+                    float currentDamage = ((float)GetMeta("Damage"));
+                    SetMeta("Damage", currentDamage + inventory[2].extraDamage);
+                }
+                selectedItem = 3;
+
+            }
+            if (Input.IsActionJustPressed("InventoryFour") && selectedItem != 4)
+            {
+                SetMeta("Damage",baseDamage);
+                foreach (ItemScript it in inventory)
+                {
+                    if (it != null)
+                    {
+                        it.GetParent<Node3D>().Visible = false;
+                    }
+                }
+                if (inventory[3] != null)
+                {
+                    inventory[3].GetParent<Node3D>().Visible = true;
+                    float currentDamage = ((float)GetMeta("Damage"));
+                    SetMeta("Damage", currentDamage + inventory[3].extraDamage);
+                }
+                selectedItem = 4;
+
+            }
+            if (Input.IsActionJustPressed("InventoryFive") && selectedItem != 5 && hasBackpack)
+            {
+                SetMeta("Damage", baseDamage);
+                foreach (ItemScript it in inventory)
+                {
+                    if (it != null)
+                    {
+                        it.GetParent<Node3D>().Visible = false;
+                    }
+                }
+                if (inventory[4] != null)
+                {
+                    inventory[4].GetParent<Node3D>().Visible = true;
+                    float currentDamage = ((float)GetMeta("Damage"));
+                    SetMeta("Damage", currentDamage + inventory[4].extraDamage);
+                }
+                selectedItem = 5;
+
+            }
+            if (Input.IsActionJustPressed("InventorySix") && selectedItem != 6 && hasBackpack)
+            {
+                SetMeta("Damage", baseDamage);
+                foreach (ItemScript it in inventory)
+                {
+                    if (it != null)
+                    {
+                        it.GetParent<Node3D>().Visible = false;
+                    }
+                }
+                if (inventory[5] != null)
+                {
+                    inventory[5].GetParent<Node3D>().Visible = true;
+                    float currentDamage = ((float)GetMeta("Damage"));
+                    SetMeta("Damage", currentDamage + inventory[5].extraDamage);
+                }
+                selectedItem = 6;
+
+            }
+        }
+
     }
 
     public override void _Process(double delta)
