@@ -5,6 +5,14 @@ public partial class PlayerMovement : CharacterBody3D
     [Export]
     public int baseDamage {  get; set; }
     [Export]
+    public int maxStamina { get; set; } = 100;
+    [Export]
+    public int stamina { get; set; } = 100;
+    [Export]
+    public float staminaRegenTime { get; set; } = 0.05f;
+    float currentStaminaRegenTime = 0;
+    float timeTillStaminaRefill { get; set; }
+    [Export]
     public bool isDummy{ get; set; } = true;
     [Export]
     public bool canAttack { get; set; } = true;
@@ -17,6 +25,8 @@ public partial class PlayerMovement : CharacterBody3D
 
     [Export]
     public int jumpHeight{ get; set; } = 14;
+    [Export]
+    public int jumpStaminaUsage { get; set; } = 30;
     [Export]
     public int FallAcceleration { get; set; } = 75;
 
@@ -45,6 +55,8 @@ public partial class PlayerMovement : CharacterBody3D
     public float shoveStun{ get; set; } = 2;
     [Export]
     public float shoveDamage { get; set; } = 5;
+    [Export]
+    public int shoveStaminaUsage { get; set; } = 20;
     [Export]
     public float lightAttDuration { get; set; } = 1f;
     [Export]
@@ -86,6 +98,7 @@ public partial class PlayerMovement : CharacterBody3D
         virusStage = 1;
         stageTime = timeTillNextStage[virusStage - 1];
         currentSpeed = speed;
+        stamina = maxStamina;
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -95,6 +108,21 @@ public partial class PlayerMovement : CharacterBody3D
         stunTime -= (float)delta;
         shoveTime -= (float)delta;
         parryTime -= (float)delta;
+        currentStaminaRegenTime -= (float)delta;
+        if(timeTillStaminaRefill > 0)
+        {
+            timeTillStaminaRefill -= (float)delta;
+            GD.Print(timeTillStaminaRefill);
+        }
+        else
+        {
+            if(stamina < maxStamina && currentStaminaRegenTime < 0)
+            {
+                stamina++;
+                GD.Print(stamina);
+                currentStaminaRegenTime = staminaRegenTime;
+            }
+        }
         if (canVirus)
         {
             //GD.Print(stageTime);
@@ -133,10 +161,10 @@ public partial class PlayerMovement : CharacterBody3D
             }
 
         }
-        if(stunTime < 0f)
+        // We create a local variable to store the input direction.
+        var direction = Vector3.Zero;
+        if (stunTime < 0f)
         {
-            // We create a local variable to store the input direction.
-            var direction = Vector3.Zero;
 
             // We check for each move input and update the direction accordingly.
             if (Input.IsActionPressed("move_right"))
@@ -162,91 +190,98 @@ public partial class PlayerMovement : CharacterBody3D
             {
                 direction = direction.Normalized();
             }
-
-            if (Input.IsActionPressed("jump") && currentJumpCooldown < 0)
+        }
+        if (Input.IsActionPressed("jump") && currentJumpCooldown < 0 && stamina > jumpStaminaUsage && IsOnFloor())
+        {
+            direction.Y += 1.0f;
+            currentJumpCooldown = jumpCooldown;
+            stamina -= jumpStaminaUsage;
+            if (timeTillStaminaRefill < 2f)
             {
-                direction.Y += 1.0f;
-                currentJumpCooldown = jumpCooldown;
+                timeTillStaminaRefill = 2f;
             }
-            //Translate();
-            _targetVelocity.X = direction.X * (currentSpeed * (1 -speedDebuff));
+        }
+        //Translate();
+        if (stunTime < 0f)
+        {
+            _targetVelocity.X = direction.X * (currentSpeed * (1 - speedDebuff));
             _targetVelocity.Z = direction.Z * (currentSpeed * (1 - speedDebuff));
-
-            // Vertical velocity
-            if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
-            {
-                _targetVelocity.Y -= FallAcceleration * (float)delta;
-            }
-            else
-            {
-                _targetVelocity.Y = direction.Y * jumpHeight;
-            }
-
-            // Moving the character
-            Velocity = _targetVelocity.Rotated(Vector3.Up.Normalized(), Rotation.Y);
-            MoveAndSlide();
-            if (canAttack && !isDummy)
-            {
-                if (Input.IsActionPressed("light_attack") && selectedItem != 0)
-                {
-                    if (selectedItem == 1|| inventory[selectedItem - 1] == null)
-                    {
-                        attackTime = lightAttDuration;
-                        
-                    }
-                    else if (inventory[selectedItem - 1].Name == "Amoxicillin Tablets" && stageTime < timeTillNextStage[virusStage - 1])
-                    {
-                        itemUseTime += (float)delta;
-                        if(itemUseTime > inventory[selectedItem-1].useTime)
-                        {
-                            stageTime = timeTillNextStage[virusStage - 1];
-                            itemUseTime = 0;
-                            inventory[selectedItem - 1].uses -= 1;
-                            if (inventory[selectedItem-1].uses < 1)
-                            {
-                                inventory[selectedItem - 1].QueueFree();
-                                inventory[selectedItem - 1] = null;
-                            }
-                        }
-                    }
-                    else if (inventory[selectedItem - 1].Name == "Augmentin Antibiotics")
-                    {
-                        itemUseTime += (float)delta;
-                        if (itemUseTime > inventory[selectedItem - 1].useTime)
-                        {
-                            stageTime = timeTillNextStage[virusStage - 1] + 90;
-                            itemUseTime = 0;
-                            inventory[selectedItem - 1].uses -= 1;
-                            if (inventory[selectedItem - 1].uses < 1)
-                            {
-                                inventory[selectedItem - 1].QueueFree();
-                                inventory[selectedItem - 1] = null;
-                            }
-                        }
-                    }
-                }
-                if (Input.IsActionJustPressed("heavy_attack"))
-                {
-
-                }
-                if (Input.IsActionJustPressed("shove"))
-                {
-                    shoveTime = shoveDuration;
-                }
-                if (Input.IsActionJustPressed("parry"))
-                {
-                    parryTime = parryDuration;
-                }
-            }
-
+        }
+        // Vertical velocity
+        if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
+        {
+            _targetVelocity.Y -= FallAcceleration * (float)delta;
         }
         else
         {
-            var direction = Vector3.Zero;
-            direction.Y += 1.0f;
-            _targetVelocity.Y = direction.Y;
-            Velocity = _targetVelocity.Rotated(Vector3.Up.Normalized(), Rotation.Y);
-            MoveAndSlide();
+            _targetVelocity.Y = direction.Y * jumpHeight;
+        }
+
+        // Moving the character
+        Velocity = _targetVelocity.Rotated(Vector3.Up.Normalized(), Rotation.Y);
+        MoveAndSlide();
+        if (canAttack && !isDummy && stunTime < 0f)
+        {
+            if (Input.IsActionPressed("light_attack") && selectedItem != 0)
+            {
+                if (selectedItem == 1|| inventory[selectedItem - 1] == null)
+                {
+                    attackTime = lightAttDuration;
+                        
+                }
+                else if (inventory[selectedItem - 1].Name == "Amoxicillin Tablets" && stageTime < timeTillNextStage[virusStage - 1])
+                {
+                    itemUseTime += (float)delta;
+                    if(itemUseTime > inventory[selectedItem-1].useTime)
+                    {
+                        stageTime = timeTillNextStage[virusStage - 1];
+                        itemUseTime = 0;
+                        inventory[selectedItem - 1].uses -= 1;
+                        if (inventory[selectedItem-1].uses < 1)
+                        {
+                            inventory[selectedItem - 1].QueueFree();
+                            inventory[selectedItem - 1] = null;
+                        }
+                    }
+                }
+                else if (inventory[selectedItem - 1].Name == "Augmentin Antibiotics")
+                {
+                    itemUseTime += (float)delta;
+                    if (itemUseTime > inventory[selectedItem - 1].useTime)
+                    {
+                        stageTime = timeTillNextStage[virusStage - 1] + 90;
+                        itemUseTime = 0;
+                        inventory[selectedItem - 1].uses -= 1;
+                        if (inventory[selectedItem - 1].uses < 1)
+                        {
+                            inventory[selectedItem - 1].QueueFree();
+                            inventory[selectedItem - 1] = null;
+                        }
+                    }
+                }
+            }
+            if (Input.IsActionJustPressed("heavy_attack"))
+            {
+
+            }
+            if (Input.IsActionJustPressed("shove") && stamina > shoveStaminaUsage)
+            {
+                shoveTime = shoveDuration;
+                if(timeTillStaminaRefill < 3f)
+                {
+                    timeTillStaminaRefill = 3f;
+                }
+                stamina -= shoveStaminaUsage;
+            }
+            if (Input.IsActionJustPressed("parry"))
+            {
+                parryTime = parryDuration;
+                if(timeTillStaminaRefill < parryDuration)
+                {
+                    timeTillStaminaRefill = parryDuration;
+                }
+            }
+
         }
         if (!isDummy)
         {
