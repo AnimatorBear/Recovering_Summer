@@ -4,6 +4,8 @@ public partial class HealthScript : Area3D
 {
 	[Export] public float maxHealth;
 	[Export] public float health;
+	[Export] public int deathOdens { get; set; } = 25;
+	[Export] public int deathXp { get; set; } = 50;
 	public float extraDamage;
     [Signal]
     public delegate void HitEventHandler();
@@ -22,6 +24,8 @@ public partial class HealthScript : Area3D
 		GD.Print(damage * (extraDamage + 1));
 		if(health < 1)
 		{
+			OutOfGamePlayerStats st = GetTree().CurrentScene.GetNode("SecretPlayer") as OutOfGamePlayerStats;
+			st.AddXPOdens(deathXp, deathOdens);
             GD.Print($"Death. of {GetParent().Name}");
 			GetParent().QueueFree();
         }else if (health > maxHealth)
