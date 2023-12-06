@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://vrgcjjrclfb6"]
+[gd_scene load_steps=12 format=3 uid="uid://vrgcjjrclfb6"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_ow6r0"]
 [ext_resource type="Script" path="res://Scripts/HealthScript.cs" id="2_wjldh"]
 [ext_resource type="Script" path="res://Scripts/PlayerControls.cs" id="3_waayb"]
 [ext_resource type="PackedScene" uid="uid://bbp41dgghlwam" path="res://Meshes/Decimator.glb" id="4_gcwiu"]
 [ext_resource type="Script" path="res://Scripts/ItemScript.cs" id="5_mk5n3"]
+[ext_resource type="Script" path="res://Scripts/ObjectsInArea.cs" id="6_0dje7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtk5h"]
 size = Vector3(1, 0.816388, 1)
@@ -14,6 +15,8 @@ size = Vector3(1, 0.816388, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f0y24"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pad1i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xyfq8"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.622309, 0, 0, 0, 0.622309, 0, 0, 0, 0.622309, -0.976209, 1.24257, 0.58546)
@@ -79,6 +82,7 @@ visible = false
 [node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D/Inventory1" instance=ExtResource("4_gcwiu")]
 transform = Transform3D(0.0476864, -0.194232, 0, 0.194232, 0.0476864, 0, 0, 0, 0.2, -0.0451657, -0.114875, -0.517164)
 script = ExtResource("5_mk5n3")
+isMelee = true
 extraDamage = 20.0
 
 [node name="Inventory2" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
@@ -123,6 +127,14 @@ transform = Transform3D(0.162407, 0.00491146, 0.116619, -0.112477, 0.059986, 0.1
 script = ExtResource("5_mk5n3")
 extraDamage = 20.0
 
+[node name="EnemiesInArea" type="Area3D" parent="Pivot/MeshInstance3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.797377)
+script = ExtResource("6_0dje7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/MeshInstance3D/Camera3D/EnemiesInArea"]
+transform = Transform3D(0.527027, 0, 0, 0, 0.727024, 0, 0, 0, 0.702147, 0, -0.143156, 0.294211)
+shape = SubResource("BoxShape3D_xyfq8")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_jtk5h")
@@ -132,3 +144,5 @@ transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
 
 [connection signal="body_entered" from="MobDetector" to="MobDetector" method="OnArea3DBodyEntered"]
 [connection signal="body_entered" from="HitDetector" to="HitDetector" method="OnHitboxEntered"]
+[connection signal="body_entered" from="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" to="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" method="OnArea3DBodyEntered"]
+[connection signal="body_exited" from="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" to="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" method="OnArea3DBodyExited"]

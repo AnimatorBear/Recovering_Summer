@@ -42,7 +42,6 @@ public partial class HealthScript : Area3D
             }
 			if (body.GetMeta("Blocking").AsBool() == true && GetParent().GetMeta("Attacking").AsBool() == true)
 			{
-                GD.Print("Parried L");
                 PlayerMovement move = GetParent() as PlayerMovement;
 				move.stunTime = 5f;
 			}

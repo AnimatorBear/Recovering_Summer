@@ -40,7 +40,11 @@ public partial class PlayerMovement : CharacterBody3D
     [Export]
     public float shoveDuration { get; set; } = 14;
     [Export]
-    public float shoveStun { get; set; } = 14;
+    public float shoveStunTiming { get; set; } = 2;
+    [Export]
+    public float shoveStun{ get; set; } = 2;
+    [Export]
+    public float shoveDamage { get; set; } = 5;
     [Export]
     public float lightAttDuration { get; set; } = 1f;
     [Export]
@@ -63,9 +67,15 @@ public partial class PlayerMovement : CharacterBody3D
 
     float itemUseTime = 0;
 
+    [Export]
+    ObjectsInArea areaObjects { get; set; }
+
+    bool firstHitShove = false;
+
     public override void _Ready()
     {
         //cam = GetNode<Camera3D>("Camera3D");
+        areaObjects = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("EnemiesInArea") as ObjectsInArea;
         inventory[0] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory1").GetChild(0) as ItemScript;
         inventory[1] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory2").GetChild(0) as ItemScript;
         inventory[2] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory3").GetChild(0) as ItemScript;
@@ -243,6 +253,19 @@ public partial class PlayerMovement : CharacterBody3D
             if (GetMeta("Attacking").AsBool() == false && attackTime > 0)
             {
                 SetMeta("Attacking", true);
+                foreach (var item in areaObjects.enemiesInArea)
+                {
+                    GD.Print(item.Name);
+                    if(item.GetMeta("Blocking").AsBool() != true)
+                    {
+                        HealthScript hp = item.GetNode<Area3D>("MobDetector") as HealthScript;
+                        hp.TakeDamage(GetMeta("Damage").AsInt32());
+                    }
+                    else
+                    {
+                        stunTime = 5f;
+                    }
+                }
                 GD.Print("Attacking");
             }
             else if (attackTime < 0 && GetMeta("Attacking").AsBool() == true)
@@ -250,14 +273,26 @@ public partial class PlayerMovement : CharacterBody3D
                 SetMeta("Attacking", false);
                 GD.Print("Not Attacking");
             }
-            if (shoveTime < shoveDuration && shoveTime >= shoveDuration - shoveStun)
+            if (shoveTime < shoveDuration && shoveTime >= shoveDuration - shoveStunTiming)
             {
+                foreach (var item in areaObjects.enemiesInArea)
+                {
+                    PlayerMovement mov = item as PlayerMovement;
+                    mov.stunTime = shoveStun;
+                    if (firstHitShove)
+                    {
+                        HealthScript hp = item.GetNode<Area3D>("MobDetector") as HealthScript;
+                        hp.TakeDamage(shoveDamage);
+                        firstHitShove = false;
+                    }
+                }
                 SetMeta("Shoving", true);
                 canAttack = false;
                 GD.Print("Shoving");
             }
-            else if (shoveTime < shoveDuration - shoveStun && shoveTime >= 0)
+            else if (shoveTime < shoveDuration - shoveStunTiming && shoveTime >= 0)
             {
+                firstHitShove = true;
                 SetMeta("Shoving", false);
                 GD.Print("Shove Recover");
             }

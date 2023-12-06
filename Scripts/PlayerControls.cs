@@ -13,9 +13,9 @@ public partial class PlayerControls : Node
         {
             if (body.GetMeta("Shoving").AsBool() == true)
             {
-                GD.Print(GetParent().Name + " Shoved");
                 PlayerMovement move = GetParent() as PlayerMovement;
                 move.stunTime = 5f;
+
             }
         }
     }
