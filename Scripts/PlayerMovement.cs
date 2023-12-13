@@ -88,6 +88,7 @@ public partial class PlayerMovement : CharacterBody3D
     float interactTime = 0;
     InteractionScript lastUsedScript;
     bool interacting;
+    public int forceOpenSlot;
 
     public override void _Ready()
     {
@@ -404,13 +405,8 @@ public partial class PlayerMovement : CharacterBody3D
         #endregion
         if (!isDummy)
         {
-            if (Input.IsActionJustPressed("InventoryOne") && selectedItem != 1)
+            if (Input.IsActionJustPressed("InventoryOne") && selectedItem != 1 || forceOpenSlot == 1)
             {
-                ItemScript item = inventory[0].Duplicate() as ItemScript;
-                GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory4").AddChild(item);
-                inventory[3] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory4").GetChild(0) as ItemScript;
-
-
                 SetMeta("Damage", baseDamage);
                 foreach (ItemScript it in inventory)
                 {
@@ -426,8 +422,9 @@ public partial class PlayerMovement : CharacterBody3D
                     SetMeta("Damage", currentDamage + inventory[0].extraDamage);
                 }
                 selectedItem = 1;
+                forceOpenSlot = 0;
             }
-            if (Input.IsActionJustPressed("InventoryTwo") && selectedItem != 2)
+            if (Input.IsActionJustPressed("InventoryTwo") && selectedItem != 2 || forceOpenSlot == 2)
             {
                 SetMeta("Damage", baseDamage);
                 foreach (ItemScript it in inventory)
@@ -444,9 +441,10 @@ public partial class PlayerMovement : CharacterBody3D
                     SetMeta("Damage", currentDamage + inventory[1].extraDamage);
                 }
                 selectedItem = 2;
+                forceOpenSlot = 0;
 
             }
-            if (Input.IsActionJustPressed("InventoryThree") && selectedItem != 3)
+            if (Input.IsActionJustPressed("InventoryThree") && selectedItem != 3 || forceOpenSlot == 3)
             {
                 SetMeta("Damage", baseDamage);
                 foreach (ItemScript it in inventory)
@@ -463,9 +461,10 @@ public partial class PlayerMovement : CharacterBody3D
                     SetMeta("Damage", currentDamage + inventory[2].extraDamage);
                 }
                 selectedItem = 3;
+                forceOpenSlot = 0;
 
             }
-            if (Input.IsActionJustPressed("InventoryFour") && selectedItem != 4)
+            if (Input.IsActionJustPressed("InventoryFour") && selectedItem != 4 || forceOpenSlot == 4)
             {
                 SetMeta("Damage",baseDamage);
                 foreach (ItemScript it in inventory)
@@ -482,9 +481,10 @@ public partial class PlayerMovement : CharacterBody3D
                     SetMeta("Damage", currentDamage + inventory[3].extraDamage);
                 }
                 selectedItem = 4;
+                forceOpenSlot = 0;
 
             }
-            if (Input.IsActionJustPressed("InventoryFive") && selectedItem != 5 && hasBackpack)
+            if (Input.IsActionJustPressed("InventoryFive") && selectedItem != 5 && hasBackpack || forceOpenSlot == 5 && hasBackpack)
             {
                 SetMeta("Damage", baseDamage);
                 foreach (ItemScript it in inventory)
@@ -501,9 +501,10 @@ public partial class PlayerMovement : CharacterBody3D
                     SetMeta("Damage", currentDamage + inventory[4].extraDamage);
                 }
                 selectedItem = 5;
+                forceOpenSlot = 0;
 
             }
-            if (Input.IsActionJustPressed("InventorySix") && selectedItem != 6 && hasBackpack)
+            if (Input.IsActionJustPressed("InventorySix") && selectedItem != 6 && hasBackpack || forceOpenSlot == 1 && hasBackpack)
             {
                 SetMeta("Damage", baseDamage);
                 foreach (ItemScript it in inventory)
@@ -520,6 +521,7 @@ public partial class PlayerMovement : CharacterBody3D
                     SetMeta("Damage", currentDamage + inventory[5].extraDamage);
                 }
                 selectedItem = 6;
+                forceOpenSlot = 0;
 
             }
         }

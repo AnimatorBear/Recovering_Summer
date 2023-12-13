@@ -117,26 +117,11 @@ uses = 1
 [node name="Inventory4" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
 visible = false
 
-[node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D/Inventory4" instance=ExtResource("4_gcwiu")]
-transform = Transform3D(0.199988, -0.00222349, 0, 0.00222349, 0.199988, 0, 0, 0, 0.2, -0.0451657, -0.114875, -0.517164)
-script = ExtResource("5_mk5n3")
-extraDamage = 20.0
-
 [node name="Inventory5" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
 visible = false
 
-[node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D/Inventory5" instance=ExtResource("4_gcwiu")]
-transform = Transform3D(0.105602, 0.169848, 0, -0.128665, 0.0799966, -0.13056, -0.110877, 0.0689368, 0.151506, -0.0451657, -0.114875, -0.517164)
-script = ExtResource("5_mk5n3")
-extraDamage = 20.0
-
 [node name="Inventory6" type="Node3D" parent="Pivot/MeshInstance3D/Camera3D"]
 visible = false
-
-[node name="Decimator" parent="Pivot/MeshInstance3D/Camera3D/Inventory6" instance=ExtResource("4_gcwiu")]
-transform = Transform3D(0.162407, 0.00491146, 0.116619, -0.112477, 0.059986, 0.154112, -0.031193, -0.190729, 0.0514727, -0.0451657, -0.114875, -0.517164)
-script = ExtResource("5_mk5n3")
-extraDamage = 20.0
 
 [node name="EnemiesInArea" type="Area3D" parent="Pivot/MeshInstance3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.797377)
