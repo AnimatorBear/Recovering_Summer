@@ -83,11 +83,17 @@ public partial class PlayerMovement : CharacterBody3D
     ObjectsInArea areaObjects { get; set; }
 
     bool firstHitShove = false;
+    [Export]
+    ObjectsInArea rayObjects { get; set; }
+    float interactTime = 0;
+    InteractionScript lastUsedScript;
+    bool interacting;
 
     public override void _Ready()
     {
         //cam = GetNode<Camera3D>("Camera3D");
         areaObjects = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("EnemiesInArea") as ObjectsInArea;
+        rayObjects = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("CustomRaycast") as ObjectsInArea;
         inventory[0] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory1").GetChild(0) as ItemScript;
         inventory[1] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory2").GetChild(0) as ItemScript;
         inventory[2] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory3").GetChild(0) as ItemScript;
@@ -99,6 +105,7 @@ public partial class PlayerMovement : CharacterBody3D
         stageTime = timeTillNextStage[virusStage - 1];
         currentSpeed = speed;
         stamina = maxStamina;
+        cam = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0) as Camera3D;
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -109,17 +116,16 @@ public partial class PlayerMovement : CharacterBody3D
         shoveTime -= (float)delta;
         parryTime -= (float)delta;
         currentStaminaRegenTime -= (float)delta;
+        interactTime -= (float)delta;
         if(timeTillStaminaRefill > 0)
         {
             timeTillStaminaRefill -= (float)delta;
-            GD.Print(timeTillStaminaRefill);
         }
         else
         {
             if(stamina < maxStamina && currentStaminaRegenTime < 0)
             {
                 stamina++;
-                GD.Print(stamina);
                 currentStaminaRegenTime = staminaRegenTime;
             }
         }
@@ -170,20 +176,28 @@ public partial class PlayerMovement : CharacterBody3D
             if (Input.IsActionPressed("move_right"))
             {
                 direction.X += 1.0f;
+                interacting = false;
+                interactTime = -1;
             }
             if (Input.IsActionPressed("move_left"))
             {
                 direction.X -= 1.0f;
+                interacting = false;
+                interactTime = -1;
             }
             if (Input.IsActionPressed("move_back"))
             {
                 // Notice how we are working with the vector's X and Z axes.
                 // In 3D, the XZ plane is the ground plane.
                 direction.Z += 1.0f;
+                interacting = false;
+                interactTime = -1;
             }
             if (Input.IsActionPressed("move_forward"))
             {
                 direction.Z -= 1.0f;
+                interacting = false;
+                interactTime = -1;
 
             }
             if (direction != Vector3.Zero)
@@ -200,6 +214,8 @@ public partial class PlayerMovement : CharacterBody3D
             {
                 timeTillStaminaRefill = 2f;
             }
+            interacting = false;
+            interactTime = -1;
         }
         //Translate();
         if (stunTime < 0f)
@@ -347,6 +363,43 @@ public partial class PlayerMovement : CharacterBody3D
                 SetMeta("Blocking", false);
                 GD.Print("Not Parrying");
             }
+        }
+        #endregion
+        #region Interaction
+        if (!isDummy)
+        {
+
+            if (Input.IsActionJustPressed("Interact") || interacting)
+            {
+                foreach (Node3D nod in rayObjects.enemiesInArea)
+                {
+                    if (nod.GetParent() as InteractionScript != null)
+                    {
+                        InteractionScript inter = nod.GetParent() as InteractionScript;
+                        lastUsedScript = inter;
+                        if (interactTime < -1)
+                        {
+                            interactTime = inter.timeToUse;
+                            interacting = true;
+                            GD.Print("Inter");
+                        }
+                    }
+                }
+                if (interactTime < 0 && interacting)
+                {
+                    lastUsedScript.Interact();
+                    interacting = false;
+                    GD.Print("Unter");
+                }
+            }
+            else
+            {
+                if(lastUsedScript != null)
+                {
+                    lastUsedScript.used = false;
+                }
+            }
+
         }
         #endregion
         if (!isDummy)

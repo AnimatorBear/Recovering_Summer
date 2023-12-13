@@ -9,7 +9,7 @@ public partial class PlayerControls : Node
 
     private void OnHitboxEntered(Node3D body)
     {
-        if (body.Name != GetParent().Name)
+        if (body.Name != GetParent().Name && body.GetMetaList().Contains("Shoving"))
         {
             if (body.GetMeta("Shoving").AsBool() == true)
             {

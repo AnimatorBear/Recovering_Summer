@@ -146,6 +146,14 @@ script = ExtResource("6_0dje7")
 transform = Transform3D(0.527027, 0, 0, 0, 0.727024, 0, 0, 0, 0.702147, 0, -0.143156, 0.294211)
 shape = SubResource("BoxShape3D_xyfq8")
 
+[node name="CustomRaycast" type="Area3D" parent="Pivot/MeshInstance3D/Camera3D"]
+transform = Transform3D(0.264565, 0, 0, 0, 0.16759, 0, 0, 0, 3.09131, 0, -0.141778, -2.04918)
+script = ExtResource("6_0dje7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/MeshInstance3D/Camera3D/CustomRaycast"]
+transform = Transform3D(0.527027, 0, 0, 0, 0.727024, 0, 0, 0, 1.52998, 0, -0.143156, -0.127346)
+shape = SubResource("BoxShape3D_xyfq8")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.85561, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_jtk5h")
@@ -157,3 +165,5 @@ transform = Transform3D(1, 0, 0, 0, 0.538906, 0, 0, 0, 1, 0, 0, 0)
 [connection signal="body_entered" from="HitDetector" to="HitDetector" method="OnHitboxEntered"]
 [connection signal="body_entered" from="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" to="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" method="OnArea3DBodyEntered"]
 [connection signal="body_exited" from="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" to="Pivot/MeshInstance3D/Camera3D/EnemiesInArea" method="OnArea3DBodyExited"]
+[connection signal="body_entered" from="Pivot/MeshInstance3D/Camera3D/CustomRaycast" to="Pivot/MeshInstance3D/Camera3D/CustomRaycast" method="OnArea3DBodyEntered"]
+[connection signal="body_exited" from="Pivot/MeshInstance3D/Camera3D/CustomRaycast" to="Pivot/MeshInstance3D/Camera3D/CustomRaycast" method="OnArea3DBodyExited"]
