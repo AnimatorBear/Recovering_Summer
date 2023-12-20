@@ -15,6 +15,11 @@ run/main_scene="res://SceneThings/node_3d.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://SceneThings/icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+
 [dotnet]
 
 project/assembly_name="Recovering Summer"

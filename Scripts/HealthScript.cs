@@ -7,11 +7,21 @@ public partial class HealthScript : Area3D
 	[Export] public int deathOdens { get; set; } = 25;
 	[Export] public int deathXp { get; set; } = 50;
 	public float extraDamage;
+	[Export]
+	public RichTextLabel hpText {  get; set; }
+	[Export]
+	public RichTextLabel maxHPText { get; set; }
     [Signal]
     public delegate void HitEventHandler();
     public override void _Ready()
 	{
-
+		if(GetParent().Name == "Player")
+		{
+			hpText = GetParent().GetParent().GetNode("UI").GetNode("HP_Text") as RichTextLabel;
+            maxHPText = GetParent().GetParent().GetNode("UI").GetNode("MXHP_Text") as RichTextLabel;
+            hpText.Text = health.ToString();
+            ChangeMaxHP(maxHealth);
+        }
     }
 	public override void _Process(double delta)
 	{
@@ -32,8 +42,32 @@ public partial class HealthScript : Area3D
 		{
 			health = maxHealth;
 		}
+		if(hpText != null) 
+		{
+			int hpint = (int)health;
+            hpText.Text = hpint.ToString();
+		}
 		GD.Print(health + " / " + maxHealth);
 	}
+
+	public void ChangeMaxHP(float newMax)
+	{
+		maxHealth = newMax;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        if (maxHPText != null)
+		{
+            maxHPText.Text = newMax.ToString();
+        }
+        if (hpText != null)
+        {
+            int hpint = (int)health;
+            hpText.Text = hpint.ToString();
+        }
+
+    }
 
     private void OnArea3DBodyEntered(Node3D body)
     {

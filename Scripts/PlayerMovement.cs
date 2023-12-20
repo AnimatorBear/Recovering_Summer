@@ -89,6 +89,12 @@ public partial class PlayerMovement : CharacterBody3D
     InteractionScript lastUsedScript;
     bool interacting;
     public int forceOpenSlot;
+    HealthScript health;
+
+    [Export]
+    public RichTextLabel staminaText { get; set; }
+    [Export]
+    public RichTextLabel maxStaminaText { get; set; }
 
     public override void _Ready()
     {
@@ -100,6 +106,7 @@ public partial class PlayerMovement : CharacterBody3D
         inventory[2] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory3").GetChild(0) as ItemScript;
         inventory[4] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory5").GetChild(0) as ItemScript;
         inventory[5] = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0).GetNode("Inventory6").GetChild(0) as ItemScript;
+        health = GetNode<HealthScript>("MobDetector");
         GD.Print(inventory[0].Name);
         SetMeta("Damage", baseDamage);
         virusStage = 1;
@@ -107,6 +114,10 @@ public partial class PlayerMovement : CharacterBody3D
         currentSpeed = speed;
         stamina = maxStamina;
         cam = GetNode<Node3D>("Pivot").GetChild(1).GetChild(0) as Camera3D;
+        if (!isDummy)
+        {
+            maxStaminaText.Text = maxStamina.ToString();
+        }
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -127,6 +138,10 @@ public partial class PlayerMovement : CharacterBody3D
             if(stamina < maxStamina && currentStaminaRegenTime < 0)
             {
                 stamina++;
+                if (!isDummy)
+                {
+                    staminaText.Text = stamina.ToString();
+                }
                 currentStaminaRegenTime = staminaRegenTime;
             }
         }
@@ -149,15 +164,13 @@ public partial class PlayerMovement : CharacterBody3D
                         speedDebuff += 0.1f;
                         break;
                     case 3:
-                        GetNode<HealthScript>("MobDetector").maxHealth -= 10;
-                        GetNode<HealthScript>("MobDetector").extraDamage  += 0.2f;
-                        GetNode<HealthScript>("MobDetector").TakeDamage(1);
+                        health.ChangeMaxHP(health.maxHealth - 10);
+                        health.extraDamage  += 0.2f;
                         break;
                     case 4:
-                        GetNode<HealthScript>("MobDetector").maxHealth -= 15;
-                        GetNode<HealthScript>("MobDetector").extraDamage += 0.15f;
+                        health.ChangeMaxHP(health.maxHealth - 15);
+                        health.extraDamage += 0.15f;
                         speedDebuff += 0.25f;
-                        GetNode<HealthScript>("MobDetector").TakeDamage(1);
                         break;
                 }
 
@@ -211,6 +224,7 @@ public partial class PlayerMovement : CharacterBody3D
             direction.Y += 1.0f;
             currentJumpCooldown = jumpCooldown;
             stamina -= jumpStaminaUsage;
+            staminaText.Text = stamina.ToString();
             if (timeTillStaminaRefill < 2f)
             {
                 timeTillStaminaRefill = 2f;
